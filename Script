@@ -1,0 +1,91 @@
+--// Oro Hub v1.4 - Items + Chests + Candy
+--// Sistemas: Items (Interactables), Chests (Containers), World, Player
+--// Créditos: By Silvazx E By Levizin | Discord: https://discord.gg/aU6gTBnwgs
+
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local Workspace = game:GetService("Workspace")
+local CoreGui = game:GetService("CoreGui")
+local HttpService = game:GetService("HttpService")
+
+local LocalPlayer = Players.LocalPlayer
+local Camera = Workspace.CurrentCamera
+
+--// ==================== CONFIG ====================
+local Config = {
+    Language = "Portuguese",
+    ToggleKey = Enum.KeyCode.V,
+    DiscordLink = "https://discord.gg/aU6gTBnwgs",
+    DiscordCode = "aU6gTBnwgs",
+    Theme = {
+        Background = Color3.fromRGB(18, 18, 22),
+        Sidebar = Color3.fromRGB(13, 13, 16),
+        Header = Color3.fromRGB(24, 24, 28),
+        Card = Color3.fromRGB(28, 28, 34),
+        CardHover = Color3.fromRGB(35, 35, 42),
+        Text = Color3.fromRGB(240, 240, 240),
+        TextDim = Color3.fromRGB(140, 140, 150),
+        Accent = Color3.fromRGB(88, 101, 242),
+        AccentLight = Color3.fromRGB(110, 120, 255),
+        ToggleOn = Color3.fromRGB(88, 101, 242),
+        ToggleOff = Color3.fromRGB(50, 50, 58),
+        Danger = Color3.fromRGB(239, 83, 80),
+        DangerLight = Color3.fromRGB(255, 100, 100)
+    }
+}
+
+local Lang = {
+    English = {
+        Items = "Items",
+        World = "World",
+        Player = "Player",
+        Settings = "Settings",
+        SelectItem = "Select Item",
+        BringItem = "Bring Item",
+        SelectChest = "Select Chest",
+        TeleportChest = "Teleport to Chest",
+        Search = "Search...",
+        DeleteDoors = "Delete Radioactive Doors",
+        BringInteractable = "Bring Interactable",
+        DeleteCellar = "Delete Cellar Door",
+        Fly = "Fly",
+        Noclip = "Noclip",
+        Speed = "Speed",
+        Aimbot = "Aimbot",
+        Loaded = "Hub Loaded!",
+        Press = "Press",
+        ToToggle = "to toggle",
+        Language = "Language",
+        ToggleKey = "Toggle Key",
+        Credits = "Credits",
+        LinkCopied = "Link copied!",
+        InviteOpened = "Invite opened!"
+    },
+    Portuguese = {
+        Items = "Items",
+        World = "Mundo",
+        Player = "Jogador",
+        Settings = "Config",
+        SelectItem = "Selecionar Item",
+        BringItem = "Trazer Item",
+        SelectChest = "Selecionar Chest",
+        TeleportChest = "Teleportar para Chest",
+        Search = "Pesquisar...",
+        DeleteDoors = "Deletar Portas Radioativas",
+        BringInteractable = "Trazer Interactable",
+        DeleteCellar = "Deletar Porta do Porão",
+        Fly = "Voar",
+        Noclip = "Atravessar Paredes",
+        Speed = "Velocidade",
+        Aimbot = "Aimbot",
+        Loaded = "Hub Carregado!",
+        Press = "Pressione",
+        ToToggle = "para alternar",
+        Language = "Idioma",
+        ToggleKey = "Tecla Toggle",
+        Credits = "Créditos",
+        LinkCopied = "Link copiado!",
+        InviteOpened = "Convite aberto!"
+    }
